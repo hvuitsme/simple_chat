@@ -6,7 +6,7 @@
   <style>
     body {
       display: flex;
-      flex-direction: column-reverse;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
@@ -28,10 +28,12 @@
   </style>
 </head>
 <body>
-  <ul id="messages"></ul>
+  
   <form id="form" action="">
+    <span id="username"></span><br>
     <input id="message-input" autocomplete="off" /><button>Send</button>
   </form>
+  <ul id="messages"></ul>
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script>
@@ -40,7 +42,8 @@
 
     // Function to set username
     const setUsername = () => {
-      username = prompt('Please enter your name:');
+      username = prompt('Mời nhập username:');
+      $('#username').text(`Chào mừng tới miền đất hứa, ${username}!`);
     };
 
     $('#form').submit(function() {

@@ -14,10 +14,10 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  console.log('A user connected');
+  console.log('1 người dùng đã ngắt kết nối');
 
   socket.on('disconnect', () => {
-    console.log('User disconnected');
+    console.log('Người dùng đã ngắt kết nối');
   });
 
   socket.on('chat message', (msg) => {
@@ -27,5 +27,5 @@ io.on('connection', (socket) => {
 
 const PORT = process.env.PORT || 7749;
 server.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Máy chủ đang chạy ở cổng: ${PORT}`);
 });
